@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/player.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a class="active" href="/">Home</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div class="player_grid-container">
+            <h1 class="player_grid-header">
+                <%= pageTitle %>
+            </h1>
+            <div class="grid_container">
+
+                <div class="grid" id="<%= pls._id%>">
+                    <h1 class="player_name">
+                        <%= pls.playerName %>
+                    </h1>
+                    <p class="player_team">
+                        From: <%= pls.from %>
+                    </p>
+                    <p class="player_price">
+                        Price: <%= pls.price %>
+                    </p>
+                    <p class="player_status">
+                        IsPlaying: <%= pls.isPlaying %>
+                    </p>
+                    <p class="player_description">
+                        Description: <%= pls.description %>
+                    </p>
+                </div>
+                <div>
+                    <p>comments</p>
+                    <div class="chat-section">
+                        <div class="main-wrapper">
+                            <div class="chat-content">
+                                <div class="message">
+                                    <div class="message-row other-message">
+
+                                    </div>
+                                    <div class="message-row your-message">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="msg-form">
+                        <input type="text" name='msg' id="msg" placeholder="Type Message Here" autocomplete="off" />
+                        <button class="btn">Send</button>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="../user/players.js"></script>
+</body>
+
+</html>

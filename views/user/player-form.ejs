@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">Home</a></li>
+                <li class="main-header__item"><a class="active" href="/addPlayer">ADDPLAYER</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>Player Form</p>
+        <form action="/Player" method="POST">
+            <div>
+                <label>PlayerName</label>
+                <input type="text" name="name" />
+            </div>
+            <div>
+                <label>TeamName</label>
+                <input type="text" name="team" />
+            </div>
+            <div>
+                <label>Price</label>
+                <input type="number" name="price" />
+            </div>
+            <div>
+                <label>IsPlaying</label>
+                <span><input type="radio" name="status" value="true" />true</span>
+                <span><input type="radio" name="status" value="false" />false</span>
+            </div>
+            <div>
+                <label>Description </label>
+                <select name="description">
+                    <option>ALl Rounder</option>
+                    <option>Batsmen</option>
+                    <option>Bowler</option>
+                </select>
+
+            </div>
+
+            <button type="submit">Save</button>
+
+        </form>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>
+        <%= pageTitle %>
+    </title> -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/player.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a class="active" href="/admin/home">Home</a></li>
+                <li class="main-header__item"><a href="/addPlayer">ADDPLAYER</a></li>
+                <li class="main-header__item"><a href="/">Admin LogOut</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <form action='/search' method="GET">
+                <input type="text" name="title" value="" />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div class="player_grid-container">
+
+            <% if (pls.length> 0) { %>
+                <h1 class="player_grid-header">
+                    <%= pageTitle %>
+                </h1>
+                <div class="grid_container">
+                    <% for (let player of pls) { %>
+                        <div class="grid">
+                            <h1 class="player_name">
+                                <%= player.playerName %>
+                            </h1>
+                            <p class="player_team">
+                                From: <%= player.from %>
+                            </p>
+                            <p class="player_price">
+                                Price: <%= player.price %>
+                            </p>
+                            <p class="player_status">
+                                IsPlaying: <%= player.isPlaying %>
+                            </p>
+                            <p class="player_description">
+                                Description: <%= player.description %>
+                            </p>
+                        </div>
+                        <% } %>
+                </div>
+                <% } else { %>
+                    <h1>Enter Correct Team Name like(MI, Srh,rr) to search Players </h1>
+                    <% } %>
+        </div>
+    </main>
+</body>
+
+</html>
